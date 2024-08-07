@@ -1,31 +1,56 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Blog</title>
-    <link rel="stylesheet" href="assets\css\styles.css">
-
-</head>
-<body>
-<h1>My First Blog</h1>
-<br>
-<table id="blogTable">
-    <trow>
-            <tr>
-            <th>Username</th>
-            <th>Title</th>
-            <th>Content</th>
-        </tr>
-    </trow>
-    <tbody>
-
-    </tbody>
-</table>
-<script src="assets\js\form.js"></script>
-
-
-
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My FirstBlog</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body class="light">
+    <header>
+      <nav>
+        <div class="nar__left"></div>
+        <div class="nav__right">
+          <label class="switch">
+            <input type="checkbox" id="mode-switcher" />
+            <span
+              ><img
+                src="./assets/images/sun moon.png"
+                alt="Sun moon icon"
+                id="mode-icon"
+                class="icon"
+            /></span>
+          </label>
+        </div>
+      </nav>
+    </header>
+    <div class="divider"></div>
+    <main>
+      <h1 class="logo">My First Blog</h1>
+      <div class="divider"></div>
+      <div class="divider--vertical"></div>
+      <section class="user-opinion">
+        <h2>What's up?</h2>
+        <form>
+          <div class="form-group">
+            <label class="form-label" for="user-name">Username</label>
+            <input type="text" class="form-input" id="author" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="title">Title</label>
+            <input type="text" class="form-input" id="title" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="content">Content</label>
+            <textarea type="text" class="form-input" id="content"></textarea>
+          </div>
+          <button id="submit" class="btn" >Submit</button>
+        </form>
+      </section>
+    </main>
+    <div class="divider"></div>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/form.js"></script>
+  </body>
 </html>

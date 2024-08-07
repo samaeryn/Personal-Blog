@@ -1,29 +1,25 @@
-// Create form
-const form = document.createElement('form');
-form.id = 'blogForm';
+const submit = document.getElementById("submit");
 
-// Create input
-const usernameInput = document.createElement('username');
-usernameInput.type = 'username';
-usernameInput.username = 'username';
-usernameInput.placeholder = 'Username';
+let data = JSON.parse(localStorage.getItem("data")) === null ? [] : JSON.parse(localStorage.getItem("data"));
 
-const titleInput = document.createElement('title');
-titleInput.type = 'title';
-titleInput.title = 'title';
-titleInput.placeholder = 'Title';
+submit.addEventListener("click", function (event) {
+    event.preventDefault();
+    const userInput = {
+      author: "",
+      title: "",
+      content: "",
+    };
 
-const content = document.createElement('content');
-contentInput.type = 'content';
-contentInput.content = 'content';
-content.placeholder = 'Content';
+    userInput.author = document.getElementById("author").value;
+    userInput.title = document.getElementById("title").value;
+    userInput.content = document.getElementById("content").value;
 
-// Create submit button
-const submitButton = document.createElement('button');
-submitButton.type = 'submit';
-submitButton.textContent = 'Submit';
+    if(userInput.author.trim().length != 0 && userInput.title.trim().length != 0 && userInput.content.trim().length != 0){
+      data.push(userInput);
+      localStorage.setItem("data", JSON.stringify(data));
 
-// Append elements
-form.appendChild(usernameInput);
-form.appendChild(titleInput);
-form.appendChild(submitButton);
+      window.location.href = "blog.html";
+    }else{
+      window.alert("User name, title, and content CANNOT be empty");
+    }
+  });
